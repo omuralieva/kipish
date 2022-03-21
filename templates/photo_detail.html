@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title_page %}{% endblock %}
+
+{% block style-libs %}
+    <link rel="stylesheet" href="{% static 'css/uikit.min.css' %}">
+{% endblock %}
+
+{% block style %}{% endblock %}
+
+{% block content %}
+
+    <section class="photo-inner">
+        <div class="container">
+            <h1 class="title"><a href="{{ photo.place.get_absolute_url }}">{{ photo.place }}</a></h1>
+            <h1 class="title">{{ photo.title }}</h1>
+            <div class="photo-header">
+                <div class="head-item-grid">
+                    <div class="item">
+                        <h3 class="header-title">Фотографий</h3>
+                        <span class="header-val">2500</span>
+                    </div>
+                    <div class="item">
+                        <h3 class="header-title">Просмотры</h3>
+                        <span class="header-val">2500</span>
+                    </div>
+                    <div class="item">
+                        <h3 class="header-title">Дата</h3>
+                        <span class="header-val">{{ photo.created_at }}</span>
+                    </div><div class="item">
+                        <h3 class="header-title">Фотограф</h3>
+                        <span class="header-val">{{ photo.photographer }}</span>
+                    </div>
+                </div>
+                <div class="item-right">
+                    <a href="#!" class="right-item download">Скачать отчет</a>
+                    <a href="#!" class="right-item share">Поделиться</a>
+                </div>
+            </div>
+            {% for i in photo.Image.all %}
+            <div class="photo-grid-bottom" uk-lightbox="animation: fade">
+                <a href="{{ i.image.url }}" class="item images-item" style="background-image:url('{{ i.image.url }}')"></a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'js/uikit-icons.min.js' %}"></script>
+    <script src="{% static 'js/uikit.min.js' %}"></script>
+    <script>
+        $('.item.images-item').on('click', function () {
+            setTimeout(function (){
+                $('.uk-lightbox').append(
+                    $('<div class="uk-btns">' +
+                        '<a href="#!" class="uk-button uk-share">Поделиться</a>' +
+                        '<a href="#!" class="uk-button uk-download">Скачать</a>' +
+                    '</div>'))
+            }, 50)
+        })
+    </script>
+{% endblock %}

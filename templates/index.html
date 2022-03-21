@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title_page %}{% endblock %}
+
+{% block style-libs %}{% endblock %}
+
+{% block style %}{% endblock %}
+
+{% block content %}
+
+    <section class="section-intro">
+        <div class="container">
+            <div class="intro">
+                <div class="left">
+                    <img src="{% static 'img/icon/intro-logo.svg' %}" alt="" class="intro-bg">
+                    <div class="left-content">
+                        <h5 class="intro-subtitle">Kipish bar</h5>
+                        <h1 class="intro-title">Открыты для новых знакомств в нашем баре</h1>
+                        <a href="#!" class="intro-more">Подробнее</a>
+                    </div>
+                </div>
+                <div class="swiper-container intro-swiper">
+                    <div class="swiper-wrapper">
+                        <a href="#!" class="swiper-slide">
+                            <img src="{% static 'img/png/intro.png' %}" alt="" class="intro-img">
+                        </a>
+                        <a href="#!" class="swiper-slide">
+                            <img src="{% static 'img/png/main.png' %}" alt="" class="intro-img">
+                        </a>
+                    </div>
+                    <div class="intro-btns">
+                        <div class="swiper-button-prev intro-prev"></div>
+                        <div class="swiper-button-next intro-next"></div>
+                    </div>
+                    <div class="swiper-pagination intro-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="main-page">
+
+        <section class="section-report">
+            {% for i in photo %}
+            <div class="container">
+                <div class="images-grid">
+                    <div class="images-item photo">
+                        <img src="{{ i.image.url }}" alt="">
+                        <a href="{{ i.get_absolute_url }}" class="images-link"></a>
+                        <div>
+                            <div class="images-tag">{{ i.created_at }}</div>
+                        </div>
+                        <div>
+                            <h2 class="images-title">{{ i.place }}</h2>
+                            <h2 class="images-title">{{ i.title }}</h2>
+                            <div class="views eye">2500</div>
+                            <div class="views pic">5000</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </section>
+
+        <a href="{% url 'video' %}" class="section-more">Все фото</a>
+
+        <section class="section-report">
+            <div class="container">
+                {% include 'components/ad-block.html' %}
+                {% for i in video %}
+                <div class="images-grid">
+                    <div class="images-item video">
+                        <img src="{{ i.video.url }}" alt="">
+                        <a href="{{ i.get_absolute_url }}" class="images-link"></a>
+                        <div>
+                            <div class="images-tag">{{ i.created_at }}</div>
+                        </div>
+                        <div>
+                            <h2 class="images-title">{{ i.place }}</h2>
+                            <h2 class="images-title">{{ i.title }}</h2>
+                            <div class="views eye">2500</div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <a href="{% url 'video' %}" class="section-more">Все видео</a>
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'js/swiper.js' %}"></script>
+    <script>
+        var introSwiper = new Swiper(".intro-swiper", {
+            effect: 'fade',
+            navigation: {
+                nextEl: ".intro-next",
+                prevEl: ".intro-prev",
+            },
+            pagination: {
+                el: ".intro-pagination",
+                clickable: true,
+                type: "fraction",
+                formatFractionCurrent: addZero,
+                formatFractionTotal: addZero
+            },
+
+            breakpoints: {
+                280: {
+                    pagination: {
+                        type: "bullets",
+                    },
+                },
+                425: {
+                    pagination: {
+                        type: "fraction",
+                    },
+                }
+            }
+        });
+
+        function addZero(num) {
+            return (num > 9) ? num : '0' + num;
+        }
+    </script>
+{% endblock %}

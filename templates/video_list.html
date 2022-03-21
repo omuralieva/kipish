@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% load static embed_video_tags %}
+
+{% block title_page %}{% endblock %}
+
+{% block style-libs %}{% endblock %}
+
+{% block style %}{% endblock %}
+
+{% block content %}
+
+    <div class="video-report-page">
+        <section class="section-report">
+            <div class="container">
+                {% include 'components/ad-block.html' %}
+                {% for i in video_posts %}
+                <div class="images-grid">
+                    <div class="images-item video">
+                        <a href="{{ i.get_absolute_url }}" class="images-link"></a>
+                        <div>
+                            <div class="images-tag">{{ i.title }}</div>
+                        </div>
+                        <div>
+                            <h2 class="images-title">{{ i.place }}</h2>
+                            <div class="views eye">2500</div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <a href="#!" class="section-more">Загрузить еще</a>
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+{#    <script src="{% static 'js/swiper.js' %}"></script>#}
+    <script>
+        var calendarSwiper = new Swiper(".calendar-swiper", {
+            navigation: {
+                nextEl: ".calendar-next",
+                prevEl: ".calendar-prev",
+            },
+            spaceBetween: 35,
+            breakpoints: {
+                320: {
+                    slidesPerView: 5,
+                    slidesPerGroup: 5,
+                    spaceBetween: 20,
+                },
+                370: {
+                    slidesPerView: 6,
+                    slidesPerGroup: 6,
+                    spaceBetween: 20,
+                },
+                425: {
+                    slidesPerView: 7,
+                    slidesPerGroup: 7,
+                    spaceBetween: 20,
+                },
+                550: {
+                    slidesPerView: 8,
+                    slidesPerGroup: 8,
+                    spaceBetween: 20,
+                },
+                640: {
+                    slidesPerView: 10,
+                    slidesPerGroup: 10,
+                    spaceBetween: 20,
+                },
+                769: {
+                    slidesPerView: 13,
+                    slidesPerGroup: 13,
+                    spaceBetween: 20,
+                },
+                1025: {
+                    slidesPerView: 18,
+                    slidesPerGroup: 18,
+                    spaceBetween: 20,
+                }
+            }
+
+        });
+
+        var introSwiper = new Swiper(".intro-swiper", {
+            effect: 'fade',
+            navigation: {
+                nextEl: ".intro-next",
+                prevEl: ".intro-prev",
+            },
+            pagination: {
+                el: ".intro-pagination",
+                clickable: true,
+                type: "fraction",
+                formatFractionCurrent: addZero,
+                formatFractionTotal: addZero
+            },
+
+            breakpoints: {
+                280: {
+                    pagination: {
+                        type: "bullets",
+                    },
+                },
+                425: {
+                    pagination: {
+                        type: "fraction",
+                    },
+                }
+            }
+        });
+
+        function addZero(num) {
+            return (num > 9) ? num : '0' + num;
+        }
+    </script>
+{% endblock %}

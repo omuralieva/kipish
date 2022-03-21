@@ -1,0 +1,187 @@
+{% load static social_tags %}
+
+<header class="header">
+    <div class="container">
+        <div class="header-inner">
+            <a href="http://127.0.0.1:8000/" class="logo">
+                <img src="{% static 'img/icon/logo.svg' %}" alt="">
+            </a>
+            <div class="header-nav">
+                <div class="nav">
+{#                    активным nav-link добавить класс active, понял ЫРЫСКЕЛДИ ?!! :) #}
+                    <a href="{% url 'photo' %}" class="nav-link">Фото</a>
+                    <a href="{% url 'video' %}" class="nav-link">Видео</a>
+                    <a href="{% url 'places' %}" class="nav-link">Заведения</a>
+                    <a href="{% url 'contacts' %}" class="nav-link">Контакты</a>
+                    <a class="nav-link search"></a>
+                </div>
+                <div class="social-network">
+                    {% get_social_links as social_links %}
+                    {% for i in social_links %}
+                      <a href="{{ i.link }}" class="link"><img src="{{ i.icon.url }}"></a>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="mob-right">
+                <a class="nav-link search mobile"></a>
+                <div class="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="search-block">
+        <div class="container">
+            {% include 'components/search-block.html' %}
+            <h2 class="search-title">Эти заведение пользуется большой популярностью</h2>
+            <div class="restaurant-grid header-rest-grid">
+                <div>
+                    <div class="images-item">
+                        <div>
+                            <div class="images-tag">Бар</div>
+                            <div class="images-tag">Летняя терасса</div>
+                        </div>
+                        <img src="{% static 'img/png/main.png' %}" alt="">
+                        <a href="#!" class="images-link"></a>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3 class="rest-title">Ресторан китайской кухни Пекинская утка</h3>
+                        <div class="rest-grid">
+                            <div class="item-grid top">
+                                <div class="item">
+                                    <h4 class="item-ttl">Адрес работы</h4>
+                                    <p class="item-val">Улица Курманжан Датки</p>
+                                </div>
+                                <div class="item">
+                                    <h4 class="item-ttl">Средний чек</h4>
+                                    <p class="item-val">1500 сом </p>
+                                </div>
+                                <div class="item">
+                                    <h4 class="item-ttl">Age control</h4>
+                                    <p class="item-val">18 +</p>
+                                </div>
+                            </div>
+                            <div class="item-grid bottom">
+                                <div class="item">
+                                    <h4 class="item-ttl">Первое блюдо</h4>
+                                    <p class="item-val meal">225 с.</p>
+                                </div>
+                                <div class="item">
+                                    <h4 class="item-ttl">Второе блюдо</h4>
+                                    <p class="item-val meal">1000 с.</p>
+                                </div>
+                                <div class="item">
+                                    <h4 class="item-ttl">Коктейль</h4>
+                                    <p class="item-val meal">500 c.</p>
+                                </div>
+                                <div class="item">
+                                    <h4 class="item-ttl">Закуска</h4>
+                                    <p class="item-val meal">400 c.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#!" class="to-book">Забронировать</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="images-item">
+                        <div>
+                            <div class="images-tag">Бар</div>
+                            <div class="images-tag">Летняя терасса</div>
+                        </div>
+                        <img src="{% static 'img/png/main.png' %}" alt="">
+                        <a href="#!" class="images-link"></a>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3 class="rest-title">Ресторан китайской кухни Пекинская утка</h3>
+                        <div class="rest-grid">
+                            <div class="item-grid top">
+                                <div class="item">
+                                    <h4 class="item-ttl">Адрес работы</h4>
+                                    <p class="item-val">Улица Курманжан Датки</p>
+                                </div>
+                                <div class="item">
+                                    <h4 class="item-ttl">Средний чек</h4>
+                                    <p class="item-val">1500 сом </p>
+                                </div>
+                                <div class="item">
+                                    <h4 class="item-ttl">Age control</h4>
+                                    <p class="item-val">18 +</p>
+                                </div>
+                            </div>
+                            <div class="item-grid bottom">
+                                <div class="item">
+                                    <h4 class="item-ttl">Первое блюдо</h4>
+                                    <p class="item-val meal">225 с.</p>
+                                </div>
+                                <div class="item">
+                                    <h4 class="item-ttl">Второе блюдо</h4>
+                                    <p class="item-val meal">1000 с.</p>
+                                </div>
+                                <div class="item">
+                                    <h4 class="item-ttl">Коктейль</h4>
+                                    <p class="item-val meal">500 c.</p>
+                                </div>
+                                <div class="item">
+                                    <h4 class="item-ttl">Закуска</h4>
+                                    <p class="item-val meal">400 c.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#!" class="to-book">Забронировать</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="images-item">
+                        <div>
+                            <div class="images-tag">Бар</div>
+                            <div class="images-tag">Летняя терасса</div>
+                        </div>
+                        <img src="{% static 'img/png/main.png' %}" alt="">
+                        <a href="#!" class="images-link"></a>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3 class="rest-title">Ресторан китайской кухни Пекинская утка</h3>
+                        <div class="rest-grid">
+                            <div class="item-grid top">
+                                <div class="item">
+                                    <h4 class="item-ttl">Адрес работы</h4>
+                                    <p class="item-val">Улица Курманжан Датки</p>
+                                </div>
+                                <div class="item">
+                                    <h4 class="item-ttl">Средний чек</h4>
+                                    <p class="item-val">1500 сом </p>
+                                </div>
+                                <div class="item">
+                                    <h4 class="item-ttl">Age control</h4>
+                                    <p class="item-val">18 +</p>
+                                </div>
+                            </div>
+                            <div class="item-grid bottom">
+                                <div class="item">
+                                    <h4 class="item-ttl">Первое блюдо</h4>
+                                    <p class="item-val meal">225 с.</p>
+                                </div>
+                                <div class="item">
+                                    <h4 class="item-ttl">Второе блюдо</h4>
+                                    <p class="item-val meal">1000 с.</p>
+                                </div>
+                                <div class="item">
+                                    <h4 class="item-ttl">Коктейль</h4>
+                                    <p class="item-val meal">500 c.</p>
+                                </div>
+                                <div class="item">
+                                    <h4 class="item-ttl">Закуска</h4>
+                                    <p class="item-val meal">400 c.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#!" class="to-book">Забронировать</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

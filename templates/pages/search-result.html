@@ -1,0 +1,302 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title_page %}{% endblock %}
+
+{% block style-libs %}{% endblock %}
+
+{% block style %}{% endblock %}
+
+{% block page %}searching-page{% endblock %}
+
+{% block content %}
+
+    <div class="search-page">
+        <section class="section-report">
+            <div class="container">
+                {% include 'components/search-block.html' %}
+                <h3 class="search-res-title">Фотоотчеты</h3>
+                <div class="images-grid">
+                    <div class="images-item photo">
+                        <img src="{% static 'img/png/main.png' %}" alt="">
+                        <a href="#!" class="images-link"></a>
+                        <div>
+                            <div class="images-tag">22 мая</div>
+                        </div>
+                        <div>
+                            <h2 class="images-title">GANBEI</h2>
+                            <div class="views eye">2500</div>
+                            <div class="views pic">5000</div>
+                        </div>
+                    </div>
+                    <div class="images-item photo">
+                        <img src="{% static 'img/png/main.png' %}" alt="">
+                        <a href="#!" class="images-link"></a>
+                        <div>
+                            <div class="images-tag">22 мая</div>
+                        </div>
+                        <div>
+                            <h2 class="images-title">GANBEI</h2>
+                            <div class="views eye">2500</div>
+                            <div class="views pic">5000</div>
+                        </div>
+                    </div>
+                    <div class="images-item photo">
+                        <img src="{% static 'img/png/main.png' %}" alt="">
+                        <a href="#!" class="images-link"></a>
+                        <div>
+                            <div class="images-tag">22 мая</div>
+                        </div>
+                        <div>
+                            <h2 class="images-title">GANBEI</h2>
+                            <div class="views eye">2500</div>
+                            <div class="views pic">5000</div>
+                        </div>
+                    </div>
+                    <div class="images-item photo">
+                        <img src="{% static 'img/png/main.png' %}" alt="">
+                        <a href="#!" class="images-link"></a>
+                        <div>
+                            <div class="images-tag">22 мая</div>
+                        </div>
+                        <div>
+                            <h2 class="images-title">GANBEI</h2>
+                            <div class="views eye">2500</div>
+                            <div class="views pic">5000</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#!" class="load-more">Загрузить еще</a>
+            </div>
+        </section>
+
+        <section class="section-report">
+            <div class="container">
+                <div class="report-header">
+                    <img src="{% static 'img/icon/intro-logo.svg' %}" alt="">
+                    <div>
+                        <h4 class="report-title">Заказ фото и видео репортажа</h4>
+                        <h6 class="report-subtitle">Любого формата и сложности</h6>
+                    </div>
+                </div>
+                <h3 class="search-res-title">Видеоотчеты</h3>
+                <div class="images-grid intro-images">
+                    <div class="images-item video">
+                        <img src="{% static 'img/png/main.png' %}" alt="">
+                        <a href="#!" class="images-link"></a>
+                        <div>
+                            <div class="images-tag">22 мая</div>
+                        </div>
+                        <div>
+                            <h2 class="images-title">GANBEI</h2>
+                            <div class="views eye">2500</div>
+                        </div>
+                    </div>
+                    <div class="images-item video">
+                        <img src="{% static 'img/png/main.png' %}" alt="">
+                        <a href="#!" class="images-link"></a>
+                        <div>
+                            <div class="images-tag">22 мая</div>
+                        </div>
+                        <div>
+                            <h2 class="images-title">GANBEI</h2>
+                            <div class="views eye">2500</div>
+                        </div>
+                    </div>
+                    <div class="images-item video">
+                        <img src="{% static 'img/png/main.png' %}" alt="">
+                        <a href="#!" class="images-link"></a>
+                        <div>
+                            <div class="images-tag">22 мая</div>
+                        </div>
+                        <div>
+                            <h2 class="images-title">GANBEI</h2>
+                            <div class="views eye">2500</div>
+                        </div>
+                    </div>
+                    <div class="images-item video">
+                        <img src="{% static 'img/png/main.png' %}" alt="">
+                        <a href="#!" class="images-link"></a>
+                        <div>
+                            <div class="images-tag">22 мая</div>
+                        </div>
+                        <div>
+                            <h2 class="images-title">GANBEI</h2>
+                            <div class="views eye">2500</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#!" class="load-more">Загрузить еще</a>
+            </div>
+        </section>
+
+        <section class="section-report">
+            <div class="container">
+                <div class="report-header">
+                    <img src="{% static 'img/icon/intro-logo.svg' %}" alt="">
+                    <div>
+                        <h4 class="report-title">Заказ фото и видео репортажа</h4>
+                        <h6 class="report-subtitle">Любого формата и сложности</h6>
+                    </div>
+                </div>
+                <h3 class="search-res-title">Заведения</h3>
+                <div class="restaurant-grid">
+                    <div>
+                        <div class="images-item">
+                            <div>
+                                <div class="images-tag">Бар</div>
+                                <div class="images-tag">Летняя терасса</div>
+                            </div>
+                            <img src="{% static 'img/png/main.png' %}" alt="">
+                            <a href="#!" class="images-link"></a>
+                        </div>
+                        <div class="restaurant-info">
+                            <h3 class="rest-title">Ресторан китайской кухни Пекинская утка</h3>
+                            <div class="rest-grid">
+                                <div class="item-grid top">
+                                    <div class="item">
+                                        <h4 class="item-ttl">Адрес работы</h4>
+                                        <p class="item-val">Улица Курманжан Датки</p>
+                                    </div>
+                                    <div class="item">
+                                        <h4 class="item-ttl">Средний чек</h4>
+                                        <p class="item-val">1500 сом </p>
+                                    </div>
+                                    <div class="item">
+                                        <h4 class="item-ttl">Age control</h4>
+                                        <p class="item-val">18 +</p>
+                                    </div>
+                                </div>
+                                <div class="item-grid bottom">
+                                    <div class="item">
+                                        <h4 class="item-ttl">Первое блюдо</h4>
+                                        <p class="item-val meal">225 с.</p>
+                                    </div>
+                                    <div class="item">
+                                        <h4 class="item-ttl">Второе блюдо</h4>
+                                        <p class="item-val meal">1000 с.</p>
+                                    </div>
+                                    <div class="item">
+                                        <h4 class="item-ttl">Коктейль</h4>
+                                        <p class="item-val meal">500 c.</p>
+                                    </div>
+                                    <div class="item">
+                                        <h4 class="item-ttl">Закуска</h4>
+                                        <p class="item-val meal">400 c.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#!" class="to-book">Забронировать</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="images-item">
+                            <div>
+                                <div class="images-tag">Бар</div>
+                                <div class="images-tag">Летняя терасса</div>
+                            </div>
+                            <img src="{% static 'img/png/main.png' %}" alt="">
+                            <a href="#!" class="images-link"></a>
+                        </div>
+                        <div class="restaurant-info">
+                            <h3 class="rest-title">Ресторан китайской кухни Пекинская утка</h3>
+                            <div class="rest-grid">
+                                <div class="item-grid top">
+                                    <div class="item">
+                                        <h4 class="item-ttl">Адрес работы</h4>
+                                        <p class="item-val">Улица Курманжан Датки</p>
+                                    </div>
+                                    <div class="item">
+                                        <h4 class="item-ttl">Средний чек</h4>
+                                        <p class="item-val">1500 сом </p>
+                                    </div>
+                                    <div class="item">
+                                        <h4 class="item-ttl">Age control</h4>
+                                        <p class="item-val">18 +</p>
+                                    </div>
+                                </div>
+                                <div class="item-grid bottom">
+                                    <div class="item">
+                                        <h4 class="item-ttl">Первое блюдо</h4>
+                                        <p class="item-val meal">225 с.</p>
+                                    </div>
+                                    <div class="item">
+                                        <h4 class="item-ttl">Второе блюдо</h4>
+                                        <p class="item-val meal">1000 с.</p>
+                                    </div>
+                                    <div class="item">
+                                        <h4 class="item-ttl">Коктейль</h4>
+                                        <p class="item-val meal">500 c.</p>
+                                    </div>
+                                    <div class="item">
+                                        <h4 class="item-ttl">Закуска</h4>
+                                        <p class="item-val meal">400 c.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#!" class="to-book">Забронировать</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="images-item">
+                            <div>
+                                <div class="images-tag">Бар</div>
+                                <div class="images-tag">Летняя терасса</div>
+                            </div>
+                            <img src="{% static 'img/png/main.png' %}" alt="">
+                            <a href="#!" class="images-link"></a>
+                        </div>
+                        <div class="restaurant-info">
+                            <h3 class="rest-title">Ресторан китайской кухни Пекинская утка</h3>
+                            <div class="rest-grid">
+                                <div class="item-grid top">
+                                    <div class="item">
+                                        <h4 class="item-ttl">Адрес работы</h4>
+                                        <p class="item-val">Улица Курманжан Датки</p>
+                                    </div>
+                                    <div class="item">
+                                        <h4 class="item-ttl">Средний чек</h4>
+                                        <p class="item-val">1500 сом </p>
+                                    </div>
+                                    <div class="item">
+                                        <h4 class="item-ttl">Age control</h4>
+                                        <p class="item-val">18 +</p>
+                                    </div>
+                                </div>
+                                <div class="item-grid bottom">
+                                    <div class="item">
+                                        <h4 class="item-ttl">Первое блюдо</h4>
+                                        <p class="item-val meal">225 с.</p>
+                                    </div>
+                                    <div class="item">
+                                        <h4 class="item-ttl">Второе блюдо</h4>
+                                        <p class="item-val meal">1000 с.</p>
+                                    </div>
+                                    <div class="item">
+                                        <h4 class="item-ttl">Коктейль</h4>
+                                        <p class="item-val meal">500 c.</p>
+                                    </div>
+                                    <div class="item">
+                                        <h4 class="item-ttl">Закуска</h4>
+                                        <p class="item-val meal">400 c.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#!" class="to-book">Забронировать</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        $('.searching-page .search-block').remove()
+        $('.searching-page .nav-link.search').on('click', function () {
+            $('.search-field').focus().parent().addClass('active')
+        })
+    </script>
+{% endblock %}

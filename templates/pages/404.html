@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title_page %}{% endblock %}
+
+{% block style-libs %}{% endblock %}
+
+{% block style %}{% endblock %}
+
+{% block page %}{% endblock %}
+
+{% block content %}
+
+    <section class="error-404">
+        <div class="error-block">
+            <h1 class="error-ttl">404</h1>
+            <p class="error-txt">
+                Страница не найдена
+            </p>
+            <img src="{% static 'img/icon/intro-logo.svg' %}" alt="">
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

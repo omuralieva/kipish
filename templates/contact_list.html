@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static social_tags %}
+
+{% block title_page %}{% endblock %}
+
+{% block style-libs %}{% endblock %}
+
+{% block style %}{% endblock %}
+
+{% block page %}contacts{% endblock %}
+
+{% block content %}
+
+    <div class="contacts-grid">
+        <div class="left-wrap">
+            <div class="left">
+                <h3 class="contacts-ttl">Контакты</h3>
+                <p class="contacts-subtext">
+                    Медиа ресурс о светской, вечерней и ночной жизни города. Место, куда заходят чтоб
+                    почувствовать и быть в курсе всех событий в культурной жизни столицы.
+                </p>
+                <div class="contacts-contacts">
+                    {% for contact in contact_list %}
+                    <div class="item">
+                        <h4 class="item-ttl">{{ contact.name }}</h4>
+                        <a href="{{ contact.link }}" class="item-val link">{{ contact.body }}</a>
+                    </div>
+                    {% endfor %}
+                    <div class="item">
+                        <h4 class="item-ttl">Социальные сети</h4>
+                        <div class="social-network flex-row">
+                            {% get_social_links as social_links %}
+                            {% for i in social_links %}
+                            <a href="{{ i.link }}" class="link"><img src="{{ i.icon.url }}"></a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

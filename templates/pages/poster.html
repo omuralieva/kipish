@@ -1,0 +1,487 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title_page %}{% endblock %}
+
+{% block style-libs %}{% endblock %}
+
+{% block style %}{% endblock %}
+
+{% block page %}poster{% endblock %}
+
+{% block content %}
+
+    <section class="section-intro">
+        <div class="container">
+            <div class="intro">
+                <div class="left">
+                    <img src="{% static 'img/icon/intro-logo.svg' %}" alt="" class="intro-bg">
+                    <div class="left-content">
+                        <h5 class="intro-suptitle">Kipish bar</h5>
+                        <h1 class="intro-title">Открыты для новых знакомств в нашем баре</h1>
+                        <a href="#!" class="intro-more">Подробнее</a>
+                    </div>
+                </div>
+                <div class="swiper-container intro-swiper">
+                    <div class="swiper-wrapper">
+                        <a href="#!" class="swiper-slide">
+                            <img src="{% static 'img/png/intro.png' %}" alt="" class="intro-img">
+                        </a>
+                    </div>
+                    <div class="intro-btns">
+                        <div class="swiper-button-prev intro-prev"></div>
+                        <div class="swiper-button-next intro-next"></div>
+                    </div>
+                    <div class="swiper-pagination intro-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="rep-header">
+        <div class="container">
+            <h1 class="title">Каждый день для нас праздник</h1>
+            <div class="calendar-swiper-wrap">
+                <div class="swiper-container calendar-swiper">
+                    <div class="swiper-wrapper">
+                        {#                        активным датам добавить класс active :) :) #}
+                        {#                        датам без контента добавить класс disabled #}
+                        <div class="swiper-slide active">
+                            <div class="day">02</div>
+                            <div class="month">май</div>
+                        </div>
+                        <div class="swiper-slide disabled">
+                            <div class="day">03</div>
+                            <div class="month">май</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="day">04</div>
+                            <div class="month">май</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="day">05</div>
+                            <div class="month">май</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="day">06</div>
+                            <div class="month">май</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="day">07</div>
+                            <div class="month">май</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="day">08</div>
+                            <div class="month">май</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="day">09</div>
+                            <div class="month">май</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="day">10</div>
+                            <div class="month">май</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="day">04</div>
+                            <div class="month">май</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="day">05</div>
+                            <div class="month">май</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="day">06</div>
+                            <div class="month">май</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="day">07</div>
+                            <div class="month">май</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="day">08</div>
+                            <div class="month">май</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="day">09</div>
+                            <div class="month">май</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="day">10</div>
+                            <div class="month">май</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="day">04</div>
+                            <div class="month">май</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="day">05</div>
+                            <div class="month">май</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="day">06</div>
+                            <div class="month">май</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="day">07</div>
+                            <div class="month">май</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="day">08</div>
+                            <div class="month">май</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="day">09</div>
+                            <div class="month">май</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="day">10</div>
+                            <div class="month">май</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="day">04</div>
+                            <div class="month">май</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="day">05</div>
+                            <div class="month">май</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="day">06</div>
+                            <div class="month">май</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="day">07</div>
+                            <div class="month">май</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="day">08</div>
+                            <div class="month">май</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="day">09</div>
+                            <div class="month">май</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="day">10</div>
+                            <div class="month">май</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-prev calendar-prev"></div>
+                <div class="swiper-button-next calendar-next"></div>
+            </div>
+            <div class="report-filter">
+                <div class="item">
+                    Все
+                </div>
+                <div class="item">
+                    Стриптиз бар
+                </div>
+                <div class="item">
+                    Клубы
+                </div>
+                <div class="item">
+                    Бары
+                </div>
+                <div class="item">
+                    Рестораны
+                </div>
+                <div class="item">
+                    Pre Party
+                </div>
+                <div class="item">
+                    Кафе
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="main-page">
+        <section class="tell-us">
+            <div class="container">
+                <div class="tell-us-block" style="background-image: url({% static 'img/png/poster-bg.png' %})">
+                    <div>
+                        <h3 class="tell-us-ttl">Знаешь об интересных событиях? Скорее расскажи нам!</h3>
+                        <div class="intro-more tell-us-open">Предложить</div>
+                    </div>
+                    <div>
+                        <img src="{% static 'img/png/poster.png' %}" alt="" class="tell-us-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-report">
+            <div class="container">
+                <div class="images-grid">
+                    <div class="images-item">
+                        <img src="{% static 'img/png/main.png' %}" alt="">
+                        <a href="#!" class="images-link"></a>
+                        <div>
+                            <div class="images-tag">
+                                <span>22 мая</span>
+                                <span>18:00</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h2 class="images-title poster">Social Coffee</h2>
+                            <h5 class="poster-subtitle">Малинки малинки такие вечеринки</h5>
+                        </div>
+                    </div>
+                    <div class="images-item">
+                        <img src="{% static 'img/png/main.png' %}" alt="">
+                        <a href="#!" class="images-link"></a>
+                        <div>
+                            <div class="images-tag">
+                                <span>22 мая</span>
+                                <span>18:00</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h2 class="images-title poster">Social Coffee</h2>
+                            <h5 class="poster-subtitle">Малинки малинки такие вечеринки</h5>
+                        </div>
+                    </div>
+                    <div class="images-item">
+                        <img src="{% static 'img/png/main.png' %}" alt="">
+                        <a href="#!" class="images-link"></a>
+                        <div>
+                            <div class="images-tag">
+                                <span>22 мая</span>
+                                <span>18:00</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h2 class="images-title poster">Social Coffee</h2>
+                            <h5 class="poster-subtitle">Малинки малинки такие вечеринки</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="images section-report">
+            <div class="container">
+                <div class="report-header">
+                    <img src="{% static 'img/icon/intro-logo.svg' %}" alt="">
+                    <div>
+                        <h4 class="report-title">Заказ фото и видео репортажа</h4>
+                        <h6 class="report-subtitle">Любого формата и сложности</h6>
+                    </div>
+                </div>
+                <div class="images-grid intro-images">
+                    <div class="images-item poster">
+                        <img src="{% static 'img/png/main.png' %}" alt="">
+                        <a href="#!" class="images-link"></a>
+                        <div>
+                            <div class="images-tag">
+                                <span>22 мая</span>
+                                <span>18:00</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h2 class="images-title">GANBEI</h2>
+                            <h3 class="poster-subtitle">Малинки малинки такие вечеринки</h3>
+                        </div>
+                    </div>
+                    <div class="images-item poster">
+                        <img src="{% static 'img/png/main.png' %}" alt="">
+                        <a href="#!" class="images-link"></a>
+                        <div>
+                            <div class="images-tag">
+                                <span>22 мая</span>
+                                <span>18:00</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h2 class="images-title">GANBEI</h2>
+                            <h3 class="poster-subtitle">Малинки малинки такие вечеринки</h3>
+                        </div>
+                    </div>
+                    <div class="images-item poster">
+                        <img src="{% static 'img/png/main.png' %}" alt="">
+                        <a href="#!" class="images-link"></a>
+                        <div>
+                            <div class="images-tag">
+                                <span>22 мая</span>
+                                <span>18:00</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h2 class="images-title">GANBEI</h2>
+                            <h3 class="poster-subtitle">Малинки малинки такие вечеринки</h3>
+                        </div>
+                    </div>
+                    <div class="images-item poster">
+                        <img src="{% static 'img/png/main.png' %}" alt="">
+                        <a href="#!" class="images-link"></a>
+                        <div>
+                            <div class="images-tag">
+                                <span>22 мая</span>
+                                <span>18:00</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h2 class="images-title">GANBEI</h2>
+                            <h3 class="poster-subtitle">Малинки малинки такие вечеринки</h3>
+                        </div>
+                    </div>
+                </div>
+                <a href="#!" class="section-more">Загрузить еще</a>
+            </div>
+        </section>
+    </div>
+
+    <div class="modal-wrap">
+        <div class="out-close"></div>
+        <div class="modal">
+            <div class="modal-close"></div>
+            <h3 class="modal-ttl">Хотите рассказать о событии?</h3>
+            <form action="" class="fields">
+                <label>
+                    <span class="input-label">Как вас зовут?</span>
+                    <input type="text" class="modal-input" placeholder="Ваше Имя" required>
+                </label>
+                <label>
+                    <span class="input-label">Ваш номер телефона</span>
+                    <input type="text" class="modal-input phone-mask" placeholder="+996 (XXX) XX XX XX" required>
+{#                    <p class="error">Введенный номер неверен, пожалуйста перепроверьте</p>#}
+                </label>
+                <label>
+                    <span class="input-label">Ссылка на новость</span>
+                    <input type="text" class="modal-input" placeholder="" required>
+                </label>
+                <label>
+                    <span class="input-label">Комментарий</span>
+                    <textarea class="modal-input modal-textarea" required></textarea>
+                </label>
+                <button class="form-btn" type="submit">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="success-modal-wrap">
+{#    чтобы откырть модалку успешно забронировали добавь класс active на success-modal-wrap#}
+        <div class="out-close"></div>
+        <div class="modal success">
+            <h3 class="success-ttl">Мы очень благодарны за то что сообщили!</h3>
+            <p class="success-txt">Мы проверим ее и постараемся выложить у себя на сайте!</p>
+            <div class="close-success">Хорошо</div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'js/swiper.js' %}"></script>
+    <script src="{% static 'js/mask.js' %}"></script>
+    <script>
+        var calendarSwiper = new Swiper(".calendar-swiper", {
+            navigation: {
+                nextEl: ".calendar-next",
+                prevEl: ".calendar-prev",
+            },
+            spaceBetween: 35,
+            breakpoints: {
+                320: {
+                    slidesPerView: 5,
+                    slidesPerGroup: 5,
+                    spaceBetween: 20,
+                },
+                370: {
+                    slidesPerView: 6,
+                    slidesPerGroup: 6,
+                    spaceBetween: 20,
+                },
+                425: {
+                    slidesPerView: 7,
+                    slidesPerGroup: 7,
+                    spaceBetween: 20,
+                },
+                550: {
+                    slidesPerView: 8,
+                    slidesPerGroup: 8,
+                    spaceBetween: 20,
+                },
+                640: {
+                    slidesPerView: 10,
+                    slidesPerGroup: 10,
+                    spaceBetween: 20,
+                },
+                769: {
+                    slidesPerView: 13,
+                    slidesPerGroup: 13,
+                    spaceBetween: 20,
+                },
+                1025: {
+                    slidesPerView: 18,
+                    slidesPerGroup: 18,
+                    spaceBetween: 20,
+                }
+            }
+
+        });
+
+        var introSwiper = new Swiper(".intro-swiper", {
+            effect: 'fade',
+            navigation: {
+                nextEl: ".intro-next",
+                prevEl: ".intro-prev",
+            },
+            pagination: {
+                el: ".intro-pagination",
+                clickable: true,
+                type: "fraction",
+                formatFractionCurrent: addZero,
+                formatFractionTotal: addZero
+            },
+
+            breakpoints: {
+                280: {
+                    pagination: {
+                        type: "bullets",
+                    },
+                },
+                425: {
+                    pagination: {
+                        type: "fraction",
+                    },
+                }
+            }
+        });
+
+        function addZero(num) {
+            return (num > 9) ? num : '0' + num;
+        }
+    </script>
+    <script>
+        $('.tell-us-open').on('click', function () {
+            $('.modal-wrap').addClass('active')
+            $('body').css('overflow', 'hidden')
+        })
+
+        $('.modal-close').on('click', function () {
+            $('.modal-wrap').removeClass('active')
+            $('body').css('overflow', 'auto')
+        })
+
+        $('.out-close').on('click', function () {
+            $('.modal-wrap').removeClass('active')
+            $('body').css('overflow', 'auto')
+        })
+
+        $.mask.definitions['9'] = false;
+        $.mask.definitions['5'] = "[0-9]";
+        $(".phone-mask").mask("+996 (555) 55 55 55", {placeholder: "X"});
+
+        $('.modal-textarea').on('input', function () {
+            this.style.height = "";
+            this.style.height = this.scrollHeight + 2 + "px";
+        })
+
+        $('.success-modal-wrap .out-close, .close-success').on('click', function () {
+            $('.success-modal-wrap').removeClass('active')
+        })
+    </script>
+{% endblock %}

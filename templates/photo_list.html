@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title_page %}{% endblock %}
+
+{% block style-libs %}{% endblock %}
+
+{% block style %}{% endblock %}
+
+{% block content %}
+
+    <section class="section-intro">
+        <div class="container">
+            <div class="intro">
+                <div class="left">
+                    <img src="{% static 'static/img/icon/intro-logo.svg' %}" alt="" class="intro-bg">
+                    <div class="left-content">
+                        <h5 class="intro-suptitle">Kipish bar</h5>
+                        <h1 class="intro-title">Открыты для новых знакомств в нашем баре</h1>
+                        <a href="#!" class="intro-more">Подробнее</a>
+                    </div>
+                </div>
+                <div class="swiper-container intro-swiper">
+                    <div class="swiper-wrapper">
+                        <a href="#!" class="swiper-slide">
+                            <img src="{% static 'img/png/intro.png' %}" alt="" class="intro-img">
+                        </a>
+                        <a href="#!" class="swiper-slide">
+                            <img src="{% static 'img/png/intro.png' %}" alt="" class="intro-img">
+                        </a>
+                    </div>
+                    <div class="intro-btns">
+                        <div class="swiper-button-prev intro-prev"></div>
+                        <div class="swiper-button-next intro-next"></div>
+                    </div>
+                    <div class="swiper-pagination intro-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="rep-header">
+        <div class="container">
+            <h1 class="title">Фотоотчет</h1>
+        </div>
+    </section>
+    <div class="photo-report-page">
+        <section class="section-report">
+            <div class="container">
+                {% include 'components/ad-block.html' %}
+                <div class="images-grid">
+                    {% for i in image_posts %}
+                    <div class="images-item photo">
+                        <img src="{{ i.image.url }}" alt="">
+                        <a href="{{ i.get_absolute_url }}" class="images-link"></a>
+                        <div>
+                            <div class="images-tag">{{ i.title }}</div>
+                        </div>
+                        <div>
+                            <h2 class="images-title">{{ i.place.title }}</h2>
+                            <div class="views eye">2500</div>
+                            <div class="views pic">5000</div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <a href="#!" class="section-more">Загрузить еще</a>
+    </div>
+
+
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'js/swiper.js' %}"></script>
+    <script>
+        var calendarSwiper = new Swiper(".calendar-swiper", {
+            navigation: {
+                nextEl: ".calendar-next",
+                prevEl: ".calendar-prev",
+            },
+            spaceBetween: 35,
+            breakpoints: {
+                320: {
+                    slidesPerView: 5,
+                    slidesPerGroup: 5,
+                    spaceBetween: 20,
+                },
+                370: {
+                    slidesPerView: 6,
+                    slidesPerGroup: 6,
+                    spaceBetween: 20,
+                },
+                425: {
+                    slidesPerView: 7,
+                    slidesPerGroup: 7,
+                    spaceBetween: 20,
+                },
+                550: {
+                    slidesPerView: 8,
+                    slidesPerGroup: 8,
+                    spaceBetween: 20,
+                },
+                640: {
+                    slidesPerView: 10,
+                    slidesPerGroup: 10,
+                    spaceBetween: 20,
+                },
+                769: {
+                    slidesPerView: 13,
+                    slidesPerGroup: 13,
+                    spaceBetween: 20,
+                },
+                1025: {
+                    slidesPerView: 18,
+                    slidesPerGroup: 18,
+                    spaceBetween: 20,
+                }
+            }
+
+        });
+
+        var introSwiper = new Swiper(".intro-swiper", {
+            effect: 'fade',
+            navigation: {
+                nextEl: ".intro-next",
+                prevEl: ".intro-prev",
+            },
+            pagination: {
+                el: ".intro-pagination",
+                clickable: true,
+                type: "fraction",
+                formatFractionCurrent: addZero,
+                formatFractionTotal: addZero
+            },
+
+            breakpoints: {
+                280: {
+                    pagination: {
+                        type: "bullets",
+                    },
+                },
+                425: {
+                    pagination: {
+                        type: "fraction",
+                    },
+                }
+            }
+        });
+
+        function addZero(num) {
+            return (num > 9) ? num : '0' + num;
+        }
+    </script>
+{% endblock %}

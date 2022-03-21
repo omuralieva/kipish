@@ -1,0 +1,160 @@
+@import "mixin";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Qanelas', sans-serif;
+}
+
+body {
+  background: #090909;
+  font-family: 'Qanelas', sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  &.hidden {
+    overflow: hidden;
+  }
+}
+
+.page {
+  &.contacts .header {
+    margin-bottom: 0;
+  }
+}
+
+form, input, select, textarea, button {
+  font-family: 'Qanelas', sans-serif;
+}
+
+.container {
+  $paddingContainer: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 #{$paddingContainer};
+  @include MQ(m-desctop) {
+    max-width: calc(1024px - #{$paddingContainer * 2});
+  }
+  @include MQ(l-tablet) {
+    max-width: calc(768px - #{$paddingContainer * 2});
+  }
+  @include MQ(m-tabled) {
+    max-width: calc(640px - #{$paddingContainer * 2});
+  }
+  @include MQ(l-phone) {
+    max-width: 100%;
+  }
+  @include MQ(phone) {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+}
+
+
+main {
+  min-height: 50vh;
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 101;
+
+  &::after,
+  &::before {
+    content: "";
+    display: block;
+    width: 50%;
+    background: #090909;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: .8s;
+
+    @include MQ(phone) {
+      transition: .5s;
+    }
+  }
+
+  &::before {
+    left: 0;
+  }
+
+  &::after {
+    right: 0;
+  }
+
+  @keyframes preloadRotate {
+    from {
+      transform: translate(-50%, -50%) rotate(0);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+  .preload-img {
+    width: 260px;
+    height: 260px;
+    object-fit: contain;
+    transform-origin: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    animation: preloadRotate infinite linear;
+    animation-duration: 2s;
+    z-index: 1;
+    transition: opacity .2s;
+
+    @include MQ(phone) {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  .preload-logo {
+    width: 280px;
+    position: absolute;
+    top: calc(50% + 32px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity .2s;
+
+    @include MQ(phone) {
+      width: 160px;
+      top: calc(50% + 18px);
+    }
+  }
+}
+
+body.preload-toggle {
+  .preload-img {
+    opacity: 0;
+  }
+
+  .preload-logo {
+    opacity: 1;
+  }
+}
+
+body.preload-end {
+  .preloader::before {
+    transform: translateX(-100%);
+  }
+
+  .preloader::after {
+    transform: translateX(100%);
+  }
+
+  .preload-logo {
+    opacity: 0;
+  }
+}
+

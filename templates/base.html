@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    {#  Seo  #}
+    <meta name="keywords" content="{% block SEO-keywords %}{% endblock %}"/>
+    <meta name="description" content="{% block SEO-description %}{% endblock %}"/>
+    <meta name="copyright" content="">
+    <meta name="language" content="RU">
+    <meta name="robots" content=""/>
+    <meta name="author" content="">
+    <meta name="reply-to" content="">
+    <meta name="owner" content="">
+    <meta name="url" content="http://127.0.0.1:8000/">
+    <meta name="identifier-URL" content="http://site.kg//">
+    {#  OpenGraph  #}
+    <meta name="og:title" content="{% block OG-title %} {% endblock %}"/>
+    <meta name="og:url" content="{% block OG-url %} {% endblock %}"/>
+    <meta name="og:image" content="{% block OG-image %} {% endblock %}"/>
+    <meta name="og:description" content="{% block OG-description %} {% endblock %}"/>
+    {#  TitlePage  #}
+    <title>{% block title_page %}{% endblock %}</title>
+    {#  FaviconSite  #}
+    <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
+    {#  Fonts  #}
+    <link rel="stylesheet" href="{% static 'fonts/Qanelas/stylesheet.css' %}">
+    {#  StyleLibs  #}
+    {% block style-libs %}{% endblock %}
+    {#  Style  #}
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/swiper.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {#  CustomStyle  #}
+    {% block style %}{% endblock %}
+
+</head>
+
+<body>
+<div class="preloader">
+    <img src="{% static 'img/icon/intro-logo.svg' %}" alt="" class="preload-img">
+    <img src="{% static 'img/icon/preloader.svg' %}" alt="" class="preload-logo">
+</div>
+
+{% include 'spriteSVG/sprite.html' %}
+
+<div class="page {% block page %}{% endblock %}">
+    {% block header %}
+        {% include 'partials/header/header.html' %}
+    {% endblock %}
+
+    <main>
+
+        {% block content %}{% endblock %}
+
+    </main>
+
+    {% block footer %}
+        {% include 'partials/footer/footer.html' %}
+    {% endblock %}
+
+</div>
+
+<script src="{% static 'js/jquery-2.2.4.js' %}"></script>
+<script>
+    $('.burger').on('click', function () {
+        $(this).toggleClass('active')
+        $('.header-nav').toggleClass('active')
+        $('body').toggleClass('hidden')
+    })
+
+    $('.nav-link.search').on('click', function () {
+        $('.search-block').slideToggle(200)
+    })
+
+    $('.search-field').on('keyup', function () {
+        if ($(this).val().length > 0) {
+            $('.on-keyup').css('display', 'grid')
+        } else {
+            $('.on-keyup').css('display', 'none')
+        }
+    })
+
+    $('.search-close').on('click', function () {
+        $('.search-field').val('')
+        $('.on-keyup').css('display', 'none')
+    })
+</script>
+
+<script>
+    $(window).on('load', function () {
+        window.setTimeout(function () {
+            $('body').addClass('preload-toggle');
+        }, 500)
+        window.setTimeout(function () {
+            $('body').addClass('preload-end');
+        }, 1000)
+        window.setTimeout(function () {
+            $('.preloader').remove()
+        }, 1500)
+    })
+</script>
+
+{% block scripts %}{% endblock %}
+
+</body>
+
+</html>

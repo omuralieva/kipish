@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title_page %}{% endblock %}
+
+{% block style-libs %}{% endblock %}
+
+{% block style %}{% endblock %}
+
+{% block page %}{% endblock %}
+
+{% block content %}
+
+    <section class="poster-inner-intro">
+        <div class="container">
+            <div class="poster-inner-grid">
+                <img src="{% static 'img/png/main.png' %}" alt="" class="item-img">
+                <div class="intro-block">
+                    <div class="inner">
+                        <h3 class="block-title">Pizza Concert Party</h3>
+                        <div class="block-info">
+                            <div class="item">
+                                <span class="item-ttl">Место:</span>
+                                <span class="item-val"> Kipish bar</span>
+                            </div>
+                            <div class="item">
+                                <span class="item-ttl">Дата:</span>
+                                <span class="item-val">17 июня 18:30</span>
+                            </div>
+                        </div>
+                        <div class="info-price">400 сом</div>
+                        <div class="to-book">Забронировать</div>
+                    </div>
+                </div>
+            </div>
+            <div class="poster-description">
+                <h3 class="title">Описание</h3>
+                <p class="poster-desc">
+                    Новое просторное заведение ближневосточной кухни от Novikov Group заработало рядом с Набережной
+                    Тараса Шевченко - это первый несетевой проект, который открылся после ресторана fine dining Artest.
+                    Состоит Maroon из двух залов, разделенных открытой кухней, где установлены мангал, тажин и дровяная
+                    печь. Здесь можно раздразнить аппетит, наблюдая, например, за тем, как умело раскатывают тесто для
+                    кутабов.
+
+                    В атмосферу Ближнего Востока погружает сразу солнечный интерьер пространства. Пол выложен плиткой с
+                    национальным орнаментом, светлые стены ассоциируются с выбеленными просторными домами Марокко, а
+                    блюда с пирамидами овощей, расставленные вдоль открытой кухни, напоминают о плодоносных жарких
+                    краях. Еду подают также на посуде, украшенной колоритной росписью... еще
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-report poster-inner-footer">
+        <div class="container">
+            <h3 class="poster-footer-title">Актуальные события Бишкека</h3>
+            <div class="images-grid">
+                <div class="images-item">
+                    <img src="{% static 'img/png/main.png' %}" alt="">
+                    <a href="#!" class="images-link"></a>
+                    <div>
+                        <div class="images-tag">
+                            <span>22 мая</span>
+                            <span>18:00</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="images-title poster">Social Coffee</h2>
+                        <h5 class="poster-subtitle">Малинки малинки такие вечеринки</h5>
+                    </div>
+                </div>
+                <div class="images-item">
+                    <img src="{% static 'img/png/main.png' %}" alt="">
+                    <a href="#!" class="images-link"></a>
+                    <div>
+                        <div class="images-tag">
+                            <span>22 мая</span>
+                            <span>18:00</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="images-title poster">Social Coffee</h2>
+                        <h5 class="poster-subtitle">Малинки малинки такие вечеринки</h5>
+                    </div>
+                </div>
+                <div class="images-item">
+                    <img src="{% static 'img/png/main.png' %}" alt="">
+                    <a href="#!" class="images-link"></a>
+                    <div>
+                        <div class="images-tag">
+                            <span>22 мая</span>
+                            <span>18:00</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="images-title poster">Social Coffee</h2>
+                        <h5 class="poster-subtitle">Малинки малинки такие вечеринки</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}
