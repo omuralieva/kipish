@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load embed_video_tags %}
-{% load static %}
+{% load static social_share_tags %}
 
 {% block title_page %}{% endblock %}
 
@@ -17,7 +17,7 @@
                 <div class="head-item-grid">
                     <div class="item">
                         <h3 class="header-title">Просмотры</h3>
-                        <span class="header-val">2500</span>
+                        <span class="header-val">{{ video.total_views }}</span>
                     </div>
                     <div class="item">
                         <h3 class="header-title">Дата</h3>
@@ -25,11 +25,14 @@
                     </div>
                     <div class="item">
                         <h3 class="header-title">Видеоограф</h3>
-                        <span class="header-val">Илья</span>
+                        <span class="header-val">{{ video.videographer }}</span>
                     </div>
                 </div>
                 <div class="item-right">
-                    <a href="#!" class="right-item share">Поделиться</a>
+                    {% get_social_links as social_links %}
+                    {% for i in social_links %}
+                    <a href="{{ i.link }}" class="right-item share"><img src="{{ i.icon.url }}"></a>
+                    {% endfor %}
                 </div>
             </div>
             <div class="photo-grid-top video">

@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.utils.safestring import mark_safe
 
 from kipish.forms import ImagePostForm
-from kipish.models import Place, ImagePost, VideoPost, ImageItem, Contact, SocialMedia
+from kipish.models import Place, ImagePost, VideoPost, ImageItem, Contact, SocialMedia, SocialMediaShare
 
 
 # @admin.register(ImagePost)
@@ -45,6 +45,7 @@ class ImagePostAdmin(admin.ModelAdmin):
     list_display = ('get_image', 'title')
     inlines = [ImageItemInline]
     prepopulated_fields = {'slug': ['title']}
+    save_on_top = True
 
     def get_image(self, obj):
         return mark_safe(f'<img src={obj.image.url} width="50" height="60"')
@@ -54,6 +55,7 @@ class ImagePostAdmin(admin.ModelAdmin):
 class PlaceAdmin(admin.ModelAdmin):
     list_display = ('get_image', 'title')
     prepopulated_fields = {'slug': ['title']}
+    save_on_top = True
 
     def get_image(self, obj):
         return mark_safe(f'<img src={obj.image.url} width="50" height="60"')
@@ -62,6 +64,16 @@ class PlaceAdmin(admin.ModelAdmin):
 @admin.register(SocialMedia)
 class SocialMediaAdmin(admin.ModelAdmin):
     list_display = ('get_icon', 'name')
+    save_on_top = True
+
+    def get_icon(self, obj):
+        return mark_safe(f'<img src={obj.icon.url} width="50" height="60"')
+
+
+@admin.register(SocialMediaShare)
+class SocialMediaShareAdmin(admin.ModelAdmin):
+    list_display = ('get_icon', 'name')
+    save_on_top = True
 
     def get_icon(self, obj):
         return mark_safe(f'<img src={obj.icon.url} width="50" height="60"')
@@ -71,6 +83,7 @@ class SocialMediaAdmin(admin.ModelAdmin):
 class VideoPostAdmin(admin.ModelAdmin):
     list_display = ['title']
     prepopulated_fields = {'slug': ['title']}
+    save_on_top = True
 
 
 admin.site.register(Contact)

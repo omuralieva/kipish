@@ -21,6 +21,10 @@ class Place(models.Model):
         return self.title
 
 
+class SaveIp(models.Model):
+    ip = models.CharField(max_length=100)
+
+
 class ImagePost(models.Model):
     class Meta:
         ordering = ['-created_at']
@@ -28,13 +32,17 @@ class ImagePost(models.Model):
     title = models.CharField(verbose_name='Событие или день недели', max_length=100)
     place = models.ForeignKey(to=Place, on_delete=models.SET_NULL, null=True, verbose_name='Заведение', blank=True)
     image = models.ImageField(upload_to='image/', verbose_name='Главное изображение', null=True)
-    created_at = models.DateTimeField(verbose_name='Дата события')
+    created_at = models.DateField(verbose_name='Дата события')
     photographer = models.CharField(verbose_name='Имя фотографа', max_length=100)
     slug = models.SlugField(max_length=300, unique=True)
+    count_views = models.ManyToManyField(to=SaveIp, related_name="post_views", blank=True)
     top = models.BooleanField(verbose_name='Актуальный фотоотчет', default=False)
 
     def get_absolute_url(self):
         return reverse('photo-detail', kwargs={'slug': self.slug})
+
+    def total_views(self):
+        return self.count_views.count()
 
 
 class ImageItem(models.Model):
@@ -49,12 +57,17 @@ class VideoPost(models.Model):
     title = models.CharField(verbose_name='Событие или день недели', max_length=100)
     place = models.ForeignKey(to=Place, on_delete=models.SET_NULL, null=True, verbose_name='Заведение', blank=True)
     url = EmbedVideoField(verbose_name='Ссылка на видео')
-    created_at = models.DateTimeField(verbose_name='Дата события')
-    slug = models.SlugField(max_length=300, default=True)
+    created_at = models.DateField(verbose_name='Дата события')
+    videographer = models.CharField(verbose_name='Видеограф', max_length=100)
+    slug = models.SlugField(max_length=300)
+    count_views = models.ManyToManyField(to=SaveIp, related_name="video_post_views", blank=True)
     top = models.BooleanField(verbose_name='Актуальный видеоотчет', default=False)
 
     def get_absolute_url(self):
         return reverse('video-detail', kwargs={'slug': self.slug})
+
+    def total_views(self):
+        return self.count_views.count()
 
 
 class Contact(models.Model):
@@ -67,6 +80,15 @@ class Contact(models.Model):
 
 
 class SocialMedia(models.Model):
+    name = models.CharField(verbose_name='Социальная сеть', max_length=100)
+    link = models.URLField(verbose_name='Ссылка на социальную сеть')
+    icon = models.FileField(upload_to='img/icon/')
+
+    def __str__(self):
+        return self.name
+
+
+class SocialMediaShare(models.Model):
     name = models.CharField(verbose_name='Социальная сеть', max_length=100)
     link = models.URLField(verbose_name='Ссылка на социальную сеть')
     icon = models.FileField(upload_to='img/icon/')

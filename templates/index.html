@@ -42,9 +42,9 @@
     <div class="main-page">
 
         <section class="section-report">
-            {% for i in photo %}
             <div class="container">
                 <div class="images-grid">
+                    {% for i in photo %}
                     <div class="images-item photo">
                         <img src="{{ i.image.url }}" alt="">
                         <a href="{{ i.get_absolute_url }}" class="images-link"></a>
@@ -58,9 +58,9 @@
                             <div class="views pic">5000</div>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
             </div>
-            {% endfor %}
         </section>
 
         <a href="{% url 'video' %}" class="section-more">Все фото</a>
